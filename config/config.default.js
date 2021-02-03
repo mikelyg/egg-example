@@ -2,8 +2,6 @@
 
 'use strict';
 
-const development = require('./config.development')
-
 /**
  * @param {Egg.EggAppInfo} appInfo app info
  */
@@ -18,7 +16,28 @@ module.exports = appInfo => {
   config.keys = appInfo.name + '_1611888903067_2947';
 
   // add your middleware config here
-  config.middleware = [];
+  // 配置需要的中间件，数组顺序即为中间件的加载顺序
+  config.middleware = ['robot', 'gzip'];
+
+  // 爬虫拦截中间件
+  config.robot = {
+    ua: [
+      /Baiduspider/i,
+    ]
+  }
+
+  config.gzip = {
+    threshold: 500,
+    enable: true,
+    match(ctx) {
+      // 只有 ios 设备才开启
+      const reg = /iphone|ipad|ipod/i;
+      return reg.test(ctx.get('user-agent'));
+    },
+    // match,
+    // ignore
+  }
+
 
   config.view = {
     defaultViewEngine: 'nunjucks',
@@ -74,8 +93,6 @@ module.exports = appInfo => {
     },
   }
   
-
-  // config.development = development
 
   // add your user config here
   const userConfig = {
