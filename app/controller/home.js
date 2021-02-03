@@ -16,6 +16,10 @@ class HomeController extends Controller {
   async isIOS() {
     this.ctx.body = `isIOS: ${this.ctx.isIOS}`
   }
+
+  async isAndroid() {
+    this.ctx.body = `isAndroid: ${this.ctx.isAndroid}`
+  }
 }
 
 module.exports = HomeController;

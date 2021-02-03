@@ -9,5 +9,6 @@ module.exports = app => {
   router.get('/demo', controller.home.demo);
   router.get('/news/list', controller.main.list);
   router.get('/main', controller.main.index);
-  router.get('/isios', controller.home.isIOS);
+  router.get('/is/ios', controller.home.isIOS);
+  router.get('/is/android', controller.home.isAndroid);
 };

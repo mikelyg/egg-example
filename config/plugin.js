@@ -16,4 +16,9 @@ module.exports = {
     enable:true,
     path: path.join(__dirname, '../lib/plugin/egg-ua')
   },
+
+  "android-ua": {
+    enable: true,
+    package: 'egg-android-ua'
+  }
 };
