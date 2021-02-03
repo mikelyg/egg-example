@@ -5,6 +5,7 @@ module.exports = options => {
   return async function gzip(ctx, next) {
     await next();
   
+    console.log('this is gzip middleware ~~~~~~~~~~~~~~~~~~~~~~');
     // 后续中间件执行完毕后将响应的体转换成gzip
     let body = ctx.body;
     if (!body) return;
