@@ -1,6 +1,6 @@
 # egg-demo
 
-this is first egg
+this is first egg demo
 
 ## QuickStart
 

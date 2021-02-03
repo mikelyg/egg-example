@@ -1,7 +1,7 @@
 module.exports = (options, app) => {
   return async function robotMiddleware(ctx, next) {
     const source = ctx.get('user-agent') || '';
-    console.log('~~~~~~~~~~~~~~~~~~~~~~user-agent', source );
+    console.log('this is robot middleware ~~~~~~~~~~~~~~~~~~~~~~');
 
     const match = options.ua.some(ua => ua.test(source));
     if (match) {
