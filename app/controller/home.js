@@ -12,6 +12,10 @@ class HomeController extends Controller {
     const { ctx } = this;
     ctx.body = 'hello world , egg demo!! ';
   }
+
+  async isIOS() {
+    this.ctx.body = `isIOS: ${this.ctx.isIOS}`
+  }
 }
 
 module.exports = HomeController;
