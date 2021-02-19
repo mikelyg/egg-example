@@ -47,7 +47,6 @@ module.exports = appInfo => {
   }
 
   config.news = {
-    pageSize: 5,
     serverUrl: 'http://easymock.fe.corp.anjuke.com/mock/5df1afeac9ff941ef1a8fe6d/mock/',
   }
 

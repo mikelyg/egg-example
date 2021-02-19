@@ -9,7 +9,7 @@ class MainController extends Controller {
     const ctx = this.ctx;
     const page = ctx.query.page || 1;
     const pageSize = ctx.query.pageSize || 1;
-    const dataList = await ctx.service.news.list(page)
+    const dataList = await ctx.service.news.list(page, pageSize)
 
     // const dataList = {
     //   list:[
